@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body, div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            width: 100%;
+            padding-bottom: 2px;
+        }
+
+        .tab {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            width: 50%;
+            height: 100px;
+            display: inline-block;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .main-container {
+            width: 100%;
+            overflow: hidden;
+            height: 1000px;
+        }
+
+        .slide-container {
+            width: 200%;
+            height: 100%;
+        }
+
+        .in-transform {
+            transition: transform 0.3s ease-out;
+        }
+
+        .slide {
+            width: 50%;
+            height: 100%;
+            display: inline-block;
+        }
+
+        .nav .slide-left {
+            transform: translate(100%,0)
+        }
+
+        .nav .slide-right {
+            transform: translate(0,0)
+        }
+
+        .main-container .slide-left{
+           transform: translate(-50%,0)
+        }
+
+        .main-container .slide-right {
+            transform: translate(0,0)
+        }
+
+        .block-1 {
+            background-color: cornflowerblue;
+        }
+
+        .block-2 {
+            background-color: greenyellow;
+        }
+
+        .divider {
+            border:2px solid red;
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="tab tab-1">TAB-1</div><div class="tab tab-2">TAB-2</div>
+    <div class="divider in-transform slide-right"></div>
+</div>
+<div class="main-container">
+    <div class="slide-container slide-right in-transform">
+        <div class="slide block-1" id="block1">test slide1</div><div class="slide block-2" id="block2">test slide2</div>
+    </div>
+</div>
+</body>
+<script src="slideTab.js"></script>
+</html>
